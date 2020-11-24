@@ -1,5 +1,5 @@
 EXENAME = final
-OBJS = main.o bfs.o
+OBJS = main.o BFS.o
 
 CXX = clang++
 CXXFLAGS = $(CS225) -std=c++1y -stdlib=libc++ -c -g -O0 -Wall -Wextra -pedantic
@@ -12,14 +12,14 @@ all : $(EXENAME)
 $(EXENAME) : $(OBJS)
 	$(LD) $(OBJS) $(LDFLAGS) -o $(EXENAME)
 
-main.o : main.cpp bfs.h 
+main.o : main.cpp BFS.h 
 	$(CXX) $(CXXFLAGS) main.cpp
 
-bfs.o : bfs.cpp bfs.h
-	$(CXX) $(CXXFLAGS) bfs.cpp
+BFS.o : BFS.cpp BFS.h
+	$(CXX) $(CXXFLAGS) BFS.cpp
 
-test: tests.o bfs.o 
-	$(LD) tests.o bfs.o $(LDFLAGS) -o test
+test: tests.o BFS.o 
+	$(LD) tests.o BFS.o $(LDFLAGS) -o test
 
 tests.o: tests/tests.cpp
 	$(CXX) $(CXXFLAGS) tests/tests.cpp
