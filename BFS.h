@@ -12,7 +12,8 @@
  
 class BFS {
 
-//public:
+public:
+ BFS();
   
 //private:
  
