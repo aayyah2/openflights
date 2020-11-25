@@ -5,7 +5,7 @@ using namespace std;
 #include <sstream>
 #include <fstream>
 
-
+//file to string as given in ppt
 std::string file_to_string(const std::string & filename) {
 	std::ifstream text(filename);
 
