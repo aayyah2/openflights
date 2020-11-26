@@ -12,3 +12,6 @@ std::vector<std::string> file_to_vector(const std::string & filename);
 
 //creates and returns vector with needed values only (3 digit code, lat, long)
 std::vector<std::string> parseVector(std::vector<std::string> vectorIn, size_t size);
+
+//calculates orthodromic distance between 2 points
+double orthodromicDistance(double lat1, double long1, double lat2, double long2);

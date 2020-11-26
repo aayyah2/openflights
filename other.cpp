@@ -66,3 +66,7 @@ std::vector<std::string> parseVector(std::vector<std::string> vectorIn, size_t s
 	return parsedVector;
 
 }
+
+double orthodromicDistance(double lat1, double long1, double lat2, double long2) {
+	return -1;
+}
