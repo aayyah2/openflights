@@ -34,17 +34,20 @@ std::vector<std::string> file_to_vector(const std::string & filename) {
 
 	return out;
 	**/
+	
+	//simplified vector transformation
 	std::ifstream file(filename);
-    std::string item;
+	std::string item;
 	std::vector<std::string> out;
-
-    while(std::getline(file, item)) {
-        out.push_back(item);
-    }
+	while(std::getline(file, item)) {
+		//1 item = 1 line in data
+		out.push_back(item);
+	}
+	//out is vector with entire csv processed
 	return out;
 }
 
-
+//parse through the vector to return needed info (3 digit code, lat, long)
 std::vector<std::string> parseVector(std::vector<std::string> vectorIn, size_t size) {
 	std::vector<std::string> parsedVector;
 	std::string temp;
@@ -67,6 +70,7 @@ std::vector<std::string> parseVector(std::vector<std::string> vectorIn, size_t s
 
 }
 
+//calculation of distance (cost) between 2 geographic points
 double orthodromicDistance(double lat1, double long1, double lat2, double long2) {
 	return -1;
 }
