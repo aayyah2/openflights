@@ -43,3 +43,26 @@ std::vector<std::string> file_to_vector(const std::string & filename) {
     }
 	return out;
 }
+
+
+std::vector<std::string> parseVector(std::vector<std::string> vectorIn, size_t size) {
+	std::vector<std::string> parsedVector;
+	std::string temp;
+	for (size_t i = 0; i < size; i++) {
+    	temp = vectorIn[i];
+
+		vector<string> v;
+		stringstream ss(temp);
+	
+		while (ss.good()) {
+			string substr;
+			getline(ss, substr, ',');
+			v.push_back(substr);
+		}
+		temp = v[4] + "," + v[6] + "," + v[7];
+		parsedVector.push_back(temp);
+	}
+
+	return parsedVector;
+
+}
