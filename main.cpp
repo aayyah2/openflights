@@ -9,6 +9,9 @@ using namespace std;
 
 int main() {
   //code for importing airportData (file_to_string is in other.cpp)
-  const std::string & airportData = "/home/cgurna2/aditiaa2-aayyah2-jchint2-cgurna2/airportData.csv";
-  file_to_string(airportData);
+  const std::string & airportData = "airportData.csv";
+  std::vector<std::string> d = file_to_vector(airportData);
+  for (int i = 0; i < 10; i++) {
+    cout<< d[i]<<endl;
+  }
 }
