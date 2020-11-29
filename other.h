@@ -15,6 +15,11 @@ std::vector<std::string> file_to_vector(const std::string & filename);
 std::vector<array<string, 3>> parseVector(std::vector<std::string> vectorIn, size_t size);
 
 //calculates orthodromic distance between 2 points
-long orthodromicDistance(double lat1, double long1, double lat2, double long2);
+long double orthodromicDistance(double lat1, double long1, double lat2, double long2);
 
 bool airportFound(string userInput, std::vector<array<string, 3>> dataset);
+
+long double toRadians(const long double degree);
+
+//check accuracy
+long double findDistance(string code1, string code2, std::vector<array<string, 3>> dataset);
