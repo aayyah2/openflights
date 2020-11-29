@@ -1,5 +1,5 @@
 EXENAME = final
-OBJS = main.o BFS.o other.o graph.o random.o edge.o
+OBJS = main.o BFS.o other.o graph.o random.o
 
 CXX = clang++
 CXXFLAGS = $(CS225) -std=c++1y -stdlib=libc++ -c -g -O0 -Wall -Wextra -pedantic
@@ -12,20 +12,17 @@ all : $(EXENAME)
 $(EXENAME) : $(OBJS)
 	$(LD) $(OBJS) $(LDFLAGS) -o $(EXENAME)
 
-main.o : main.cpp BFS.h other.h  edge.h graph.h random.h
+main.o : main.cpp BFS.h other.h graph.h random.h edge.h
 	$(CXX) $(CXXFLAGS) main.cpp
 
 BFS.o : BFS.cpp BFS.h
 	$(CXX) $(CXXFLAGS) BFS.cpp
 
-graph.o : graph.cpp graph.h
+graph.o : graph.cpp graph.h random.h random.cpp edge.h
 	$(CXX) $(CXXFLAGS) graph.cpp
 
 random.o : random.cpp random.h
 	$(CXX) $(CXXFLAGS) random.cpp
-
-edge.o : edge.h 
-	$(CXX) $(CXXFLAGS) edge.h
 
 other.o : other.cpp other.h
 	$(CXX) $(CXXFLAGS) other.cpp
