@@ -12,7 +12,7 @@ all : $(EXENAME)
 $(EXENAME) : $(OBJS)
 	$(LD) $(OBJS) $(LDFLAGS) -o $(EXENAME)
 
-main.o : main.cpp BFS.h other.h graph.h random.h edge.h
+main.o : main.cpp BFS.h other.h  edge.h graph.h random.h
 	$(CXX) $(CXXFLAGS) main.cpp
 
 BFS.o : BFS.cpp BFS.h
@@ -23,6 +23,9 @@ graph.o : graph.cpp graph.h
 
 random.o : random.cpp random.h
 	$(CXX) $(CXXFLAGS) random.cpp
+
+edge.o : edge.h 
+	$(CXX) $(CXXFLAGS) edge.h
 
 other.o : other.cpp other.h
 	$(CXX) $(CXXFLAGS) other.cpp

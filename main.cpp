@@ -22,7 +22,7 @@ int main() {
 
   array<string, 3> point1 = refinedData[0];
   array<string, 3> point2 = refinedData[1];
-
+  
   //populate graph
   Graph g(true);
   Vertex v1 = point1[0];
