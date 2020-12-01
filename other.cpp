@@ -50,7 +50,7 @@ std::vector<std::string> file_to_vector(const std::string & filename) {
 }
 
 //parse through the vector to return needed info (3 digit code, lat, long)
-std::vector<array<string, 3>> parseVector(std::vector<std::string> vectorIn, size_t size) {
+std::vector<array<string, 3>> parseVector(std::vector<std::string> vectorIn, size_t size, array<int, 3> arr) {
 	std::vector<array<string, 3>> parsedVector;
 	std::string temp;
 	for (size_t i = 0; i < size; i++) {
@@ -65,8 +65,8 @@ std::vector<array<string, 3>> parseVector(std::vector<std::string> vectorIn, siz
 			v.push_back(substr);
 		}
 		temp = v[4] + "," + v[6] + "," + v[7];
-
-		array<string, 3> a{v[4],v[6],v[7]};
+		
+		array<string, 3> a{v[arr[0]],v[arr[1]],v[arr[2]]};
 		
 
 		parsedVector.push_back(a);

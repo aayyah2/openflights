@@ -34,7 +34,7 @@
 #include <sstream>
 #include <vector>
 
-#include "edge.h"
+#include "edge.cpp"
 #include "random.h"
 
 using std::cerr;

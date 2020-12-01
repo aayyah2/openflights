@@ -1,7 +1,7 @@
 #include "BFS.h"
 #include "other.h"
 #include "graph.h"
-#include "edge.h"
+#include "edge.cpp"
 #include "random.h"
 
 #include <iostream>
@@ -19,7 +19,11 @@ int main() {
   const std::string & airportData = "airportData.csv";
   std::vector<std::string> data = file_to_vector(airportData);
   //parse through the vector to return needed info (3 digit code, lat, long)
-  std::vector<array<string, 3>> refinedData = parseVector(data, data.size());
+  array<int, 3> params{4,6,7};
+  
+  std::vector<array<string, 3>> refinedData = parseVector(data, data.size(), params);
+
+  array<int, 3> paramsTwo{2,4,7};
 
   array<string, 3> point1 = refinedData[0];
   array<string, 3> point2 = refinedData[1];
@@ -31,11 +35,15 @@ int main() {
   g.insertVertex(v1);
   g.insertVertex(v2);
 
+  
+  
+  g.insertEdge(v1, v2);
 
   g.setEdgeWeight(v1, v2, findDistance(v1, v2, refinedData));
-  g.print();
-  
 
+  cout << g.getEdgeWeight(v1, v2);
+  //g.print();
+  
   for (int i = 0; i < 10; i++) {
     //array<string, 3> temp{refinedData[i]};
     cout<<refinedData[i][0]<<endl;
