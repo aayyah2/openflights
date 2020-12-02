@@ -22,4 +22,4 @@ bool airportFound(string userInput, std::vector<array<string, 3>> dataset);
 long double toRadians(const long double degree);
 
 //check accuracy
-long double findDistance(string code1, string code2, std::vector<array<string, 3>> dataset);
+double findDistance(string code1, string code2, std::vector<array<string, 3>> dataset);
