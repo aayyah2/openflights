@@ -3,6 +3,7 @@
 #include "graph.h"
 #include "edge.cpp"
 #include "random.h"
+#include "Dijkstra.h"
 
 #include <iostream>
 #include <stdlib.h>
@@ -13,78 +14,66 @@ using namespace std;
 #include <vector>
 #include <array>
 #include <string>
+#include <map>
 
 int main() {
+  
   //code for importing airportData (file_to_string is in other.cpp)
-  const std::string & airportData = "airportData.csv";
+
+  
+  const std::string & airportData = "Datasets/airportData.csv";
   std::vector<std::string> data = file_to_vector(airportData);
   //parse through the vector to return needed info (3 digit code, lat, long)
   array<int, 3> params{4,6,7};
   std::vector<array<string, 3>> refinedData = parseVector(data, data.size(), params);
 
 
-  const std::string & airportRoutesData = "airportRoutesData.csv";
+  const std::string & airportRoutesData = "Datasets/airportRoutesData.csv";
   std::vector<std::string> routesData = file_to_vector(airportRoutesData);
   array<int, 3> paramsTwo{2,4,7};
   std::vector<array<string, 3>> routes = parseVector(routesData, routesData.size(), paramsTwo);
 
   array<string, 3> routeOne = routes[0];
+  //cout << routeOne[0] << routeOne[1] << routeOne[2] << endl;
+  Graph g(true, true);
 
-  Graph g(true);
+  int i = 0;
 
-
+  std::vector<Vertex> addedVertexes;
+  
   for (array<string, 3> route : routes) {
     Vertex v1 = route[0];
     Vertex v2 = route[1];
+    
     g.insertVertex(v1);
     g.insertVertex(v2);
     g.insertEdge(v1, v2);
+    if (i == 0) {
+      g.setEdgeLabel(v1,v2, "WIN");
+    }
     g.setEdgeWeight(v1, v2, findDistance(v1, v2, refinedData));
+    if (i==10) {
+      break;
+    }
+    i++;
   }
-  g.savePNG("out.png");
-  /**
+
+  g.initSnapshot("Out");
+  g.snapshot();
   
-  for (int i = 0; i < 10; i++) {
-    //array<string, 3> temp{refinedData[i]};
-    cout<<refinedData[i][0]<< refinedData[i][1] << endl;
+
+  Dijkstra shortestPath(g, "CEK");
+  for (auto pair : shortestPath.distances) {
+    cout << pair.first<< ":" << pair.second << endl;
   }
-  g.setEdgeWeight(v1, v2, findDistance(v1, v2, refinedData));
-  cout << orthodromicDistance(55.606201171875, 49.278701782227, 43.449902, 39.9566) << endl;
- 
-  //g.print();
 
-  
-  array<string, 3> point1 = refinedData[0];
-  array<string, 3> point2 = refinedData[1];
-  
-  //populate graph
-  Graph g(true);
-  Vertex v1 = point1[0];
-  Vertex v2 = point2[0];
-  g.insertVertex(v1);
-  g.insertVertex(v2);
 
-  
-  
-  g.insertEdge(v1, v2);
+/**
 
-  g.setEdgeWeight(v1, v2, findDistance(v1, v2, refinedData));
-
-  cout << g.getEdgeWeight(v1, v2);
-  //g.print();
-  
-  
   for (int i = 0; i < 10; i++) {
     //array<string, 3> temp{refinedData[i]};
     cout<<refinedData[i][0]<<endl;
   }
-  
-
-
-
-  //test cases
- //cout<< orthodromicDistance(-5.826789855957031,144.29600524902344,-6.569803,146.725977) << endl;
-
   
   string departure = "";
   cout<< "Enter Departure Airport Code With Quotations: ";
@@ -103,7 +92,7 @@ int main() {
     //check for accuracy
     cout << findDistance(arrival, departure, refinedData) << endl;
   }
-  **/
-
+  
+**/
 
 }

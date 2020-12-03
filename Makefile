@@ -1,5 +1,5 @@
 EXENAME = final
-OBJS = main.o BFS.o other.o edge.o graph.o
+OBJS = main.o BFS.o other.o edge.o graph.o Dijkstra.o
 
 CXX = clang++
 CXXFLAGS = $(CS225) -std=c++1y -stdlib=libc++ -c -g -O0 -Wall -Wextra -pedantic 
@@ -14,6 +14,9 @@ $(EXENAME) : $(OBJS)
 
 BFS.o : BFS.cpp BFS.h
 	$(CXX) $(CXXFLAGS) BFS.cpp
+
+Dijkstra.o : Dijkstra.cpp Dijkstra.h
+	$(CXX) $(CXXFLAGS) Dijkstra.cpp
 
 other.o : other.cpp other.h
 	$(CXX) $(CXXFLAGS) other.cpp
@@ -33,7 +36,7 @@ tests.o: tests/test.cpp
 catchmain.o : catch/catchmain.cpp catch/catch.hpp
 	$(CXX) $(CXXFLAGS) catch/catchmain.cpp
 
-main.o : main.cpp BFS.h other.h
+main.o : main.cpp BFS.h other.h graph.h Dijkstra.h
 	$(CXX) $(CXXFLAGS) main.cpp
 
 clean :
