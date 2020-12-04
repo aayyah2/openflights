@@ -366,7 +366,9 @@ void Graph::snapshot()
 {
     std::stringstream ss;
     ss << picNum;
+    
     string newName = picName + ss.str();
+    
     savePNG(newName);
     ++picNum;
 }
@@ -418,11 +420,15 @@ void Graph::savePNG(string title) const
         << "\tedge [penwidth=\"1.5\", fontsize=\"7.0\"];\n";
 
     vector<Vertex> allv = getVertices();
+    
     //lambda expression
     sort(allv.begin(), allv.end(), [](const Vertex& lhs, const Vertex& rhs) {
-        return stoi(lhs.substr(3)) > stoi(rhs.substr(3));
+        //cout << stoi(lhs) << endl;
+        //cout << stoi(rhs) << endl;
+        return (lhs) > (rhs);
     });
 
+    
     int xpos1 = 100;
     int xpos2 = 100;
     int xpos, ypos;
