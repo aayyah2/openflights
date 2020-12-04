@@ -70,13 +70,14 @@ int main() {
 
   Dijkstra shortestPath(g, "CEK", "KZN");
  
-  
+  /**
   for (auto pair : shortestPath.distances) {
     
       cout << pair.first<< ":" << pair.second << endl;
     
     
   }
+  **/
   
 
  //shortestPath.printItinerary();
