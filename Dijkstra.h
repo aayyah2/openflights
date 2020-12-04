@@ -23,6 +23,7 @@ class Dijkstra {
         std::vector<Vertex> q;
         std::vector<Vertex> myJourney;
         std::map<string, double> distances;
-        string travelDistance;
+        std::map<string, vector<Vertex>> paths;
+        double travelDistance;
 
 };

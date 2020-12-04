@@ -58,9 +58,6 @@ int main() {
       g.setEdgeLabel(v1,v2, "WIN");
     }
     g.setEdgeWeight(v1, v2, findDistance(v1, v2, refinedData));
-    if (i == 30) {
-      break;
-    }
     i++;
   }
   
@@ -68,9 +65,10 @@ int main() {
   g.snapshot();
   
   
-  Dijkstra shortestPath(g, "CEK", "KZN");
- 
-  /**
+  Dijkstra shortestPath(g, "ORD", "BOM");
+  
+ /**
+  
   for (auto pair : shortestPath.distances) {
     
     cout << pair.first<< ":" << pair.second << endl;
@@ -79,10 +77,9 @@ int main() {
   }
   **/
   
+
   
-  //shortestPath.printItinerary();
-  
-  
+  shortestPath.printItinerary();
   /**
    for (int i = 0; i < 10; i++) {
    //array<string, 3> temp{refinedData[i]};
