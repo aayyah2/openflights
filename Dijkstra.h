@@ -13,8 +13,18 @@ using namespace std;
 
 class Dijkstra {
     public :
-        Dijkstra(Graph g, Vertex origin);
+        //constructor for shortest path finder
+        Dijkstra(Graph g, Vertex origin, Vertex destination);
+        void printItinerary();
+
+        Vertex startingPoint;
+        Vertex endingPoint;
+        
         std::vector<Vertex> q;
+        std::vector<Vertex> myJourney;
         std::map<string, double> distances;
+        string travelDistance;
+
+    
 
 };

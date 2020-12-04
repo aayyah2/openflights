@@ -44,15 +44,21 @@ int main() {
   for (array<string, 3> route : routes) {
     Vertex v1 = route[0];
     Vertex v2 = route[1];
-    
-    g.insertVertex(v1);
-    g.insertVertex(v2);
+    if (g.vertexExists(v1) == false) {
+      g.insertVertex(v1);
+    }
+    if (g.vertexExists(v2) == false) {
+      g.insertVertex(v2);
+    }
     g.insertEdge(v1, v2);
     if (i == 0) {
+      g.setEdgeLabel(v1,v2, "LOSE");
+    }
+    if (i == 1) {
       g.setEdgeLabel(v1,v2, "WIN");
     }
     g.setEdgeWeight(v1, v2, findDistance(v1, v2, refinedData));
-    if (i==10) {
+    if (i == 30) {
       break;
     }
     i++;
@@ -62,10 +68,18 @@ int main() {
   g.snapshot();
   
 
-  Dijkstra shortestPath(g, "CEK");
+  Dijkstra shortestPath(g, "CEK", "KZN");
+ 
+  
   for (auto pair : shortestPath.distances) {
-    cout << pair.first<< ":" << pair.second << endl;
+    
+      cout << pair.first<< ":" << pair.second << endl;
+    
+    
   }
+  
+
+ //shortestPath.printItinerary();
 
 
 /**
