@@ -35,7 +35,7 @@ int main() {
   std::vector<array<string, 3>> routes = parseVector(routesData, routesData.size(), paramsTwo);
   
   array<string, 3> routeOne = routes[0];
-  //cout << routeOne[0] << routeOne[1] << routeOne[2] << endl;
+  
   Graph g(true, true);
   
   int i = 0;
@@ -55,9 +55,10 @@ int main() {
     g.setEdgeWeight(v1, v2, findDistance(v1, v2, refinedData));
     
     i++;
+    break; 
   }
 
-  LandmarkPath shortestLayoverPath(g, "ORD", "BOM", "AUH");
+  LandmarkPath shortestLayoverPath(g, "CMI", "MAA", "FKB");
   shortestLayoverPath.printLayoverItinerary();
 
 
