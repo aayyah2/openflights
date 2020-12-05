@@ -27,6 +27,7 @@ BFS::BFS(Graph g, Vertex s) //g is the graph, s is the source node
     adj = new list<Vertex>[q.size()];
 
     Q.push(s); //enqueue s, inserting s in queue until all its neighbor vertices are marked
+    
     visited[s] = true; //mark s as visited
 
     while(!Q.empty()) //while Q is not empty
