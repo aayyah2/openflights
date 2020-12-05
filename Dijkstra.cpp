@@ -28,6 +28,7 @@ Dijkstra::Dijkstra(Graph g, Vertex origin, Vertex destination) {
         for (Vertex u : vAdjacent) {
             double temp = distances[v] + g.getEdgeWeight(v,u);
             if (temp < distances[u])  {
+
                 vector<Vertex> a = paths[v];
                 a.push_back(u);
                 
@@ -44,6 +45,10 @@ Dijkstra::Dijkstra(Graph g, Vertex origin, Vertex destination) {
 void Dijkstra::printItinerary() {
     cout << "Starting airport is: " << startingPoint << endl;
     cout << "Ending airport is: " << endingPoint << endl;
+    if (travelDistance == 0) {
+        cout << "This itinerary is not possible with current dataset" << endl;
+        return;
+    }
     cout << "This is how you get from " << startingPoint << " to " << endingPoint << ":" << endl;
     for (Vertex airport : myJourney) {
         cout << "Travel to " << airport << endl;
@@ -51,3 +56,5 @@ void Dijkstra::printItinerary() {
     cout << "Arrived at Destination. Total travelled miles are: " << travelDistance << " Km" << endl;
 
 }
+
+

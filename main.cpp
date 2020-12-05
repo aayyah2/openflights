@@ -51,35 +51,24 @@ int main() {
       g.insertVertex(v2);
     }
     g.insertEdge(v1, v2);
-    if (i == 0) {
-      g.setEdgeLabel(v1,v2, "LOSE");
-    }
-    if (i == 1) {
-      g.setEdgeLabel(v1,v2, "WIN");
-    }
     g.setEdgeWeight(v1, v2, findDistance(v1, v2, refinedData));
+    
     i++;
+  }
+
+  Dijkstra shortestPath(g, "ORD", "UPP");
+
+  shortestPath.printItinerary();
+
+  for (size_t i = 0; i < shortestPath.myJourney.size() - 1; i++) {
+    g.setEdgeLabel(shortestPath.myJourney[i],shortestPath.myJourney[i+1], "LOSE");
   }
   
   g.initSnapshot("Out");
   g.snapshot();
-  
-  
-  Dijkstra shortestPath(g, "ORD", "BOM");
-  
- /**
-  
-  for (auto pair : shortestPath.distances) {
-    
-    cout << pair.first<< ":" << pair.second << endl;
-    
-    
-  }
-  **/
-  
+
 
   
-  shortestPath.printItinerary();
   /**
    for (int i = 0; i < 10; i++) {
    //array<string, 3> temp{refinedData[i]};
@@ -87,14 +76,14 @@ int main() {
    }
    
    string departure = "";
-   cout<< "Enter Departure Airport Code With Quotations: ";
+   cout<< "Enter Departure Airport Code: ";
    cin>> departure;
    
    cout << airportFound(departure, refinedData) <<endl;
    string arrival = "";
    cout<< "Enter Arrival Airport Code: ";
    cin>> arrival;
-   cout<<"Calculating path from " << departure<< " to " << arrival<< endl;
+   
    //try catch to ensure valid airports
    if (airportFound(departure, refinedData)&& airportFound(arrival,refinedData)) {
    //check for accuracy

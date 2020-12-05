@@ -477,8 +477,26 @@ void Graph::savePNG(string title) const
             }
             if (weighted && it2->second.getWeight() != -1)
                 neatoFile << "[label=\"" << it2->second.getWeight() << "\"]";
-            
+
             neatoFile<< "[constraint = \"false\"]" << ";\n";
+
+            
+        }
+    }
+
+    for (auto it = adjacency_list.begin(); it != adjacency_list.end(); ++it) 
+    {
+        for (auto it2 = it->second.begin(); it2 != it->second.end(); ++it2) 
+        {
+            string vertex1Text = it->first;
+            string vertex2Text = it2->first;
+
+            neatoFile << "\t\"" ;
+            neatoFile << vertex1Text;
+            neatoFile << "\" -- \"" ;
+            neatoFile << vertex2Text;
+            neatoFile << "\"";
+            
         }
     }
 
