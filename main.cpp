@@ -4,6 +4,7 @@
 #include "edge.cpp"
 #include "random.h"
 #include "Dijkstra.h"
+#include "LandmarkPath.h"
 
 #include <iostream>
 #include <stdlib.h>
@@ -56,16 +57,20 @@ int main() {
     i++;
   }
 
-  Dijkstra shortestPath(g, "ORD", "UPP");
+  LandmarkPath shortestLayoverPath(g, "ORD", "BOM", "AUH");
+  shortestLayoverPath.printLayoverItinerary();
 
-  shortestPath.printItinerary();
 
-  for (size_t i = 0; i < shortestPath.myJourney.size() - 1; i++) {
-    g.setEdgeLabel(shortestPath.myJourney[i],shortestPath.myJourney[i+1], "LOSE");
-  }
+  // Dijkstra shortestPath(g, "ORD", "BOM");
+
+  // shortestPath.printItinerary();
+
+  // for (size_t i = 0; i < shortestPath.myJourney.size() - 1; i++) {
+  //   g.setEdgeLabel(shortestPath.myJourney[i],shortestPath.myJourney[i+1], "LOSE");
+  // }
   
-  g.initSnapshot("Out");
-  g.snapshot();
+  // g.initSnapshot("Out");
+  // g.snapshot();
 
 
   

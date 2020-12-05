@@ -53,7 +53,7 @@ void Dijkstra::printItinerary() {
     for (Vertex airport : myJourney) {
         cout << "Travel to " << airport << endl;
     }
-    cout << "Arrived at Destination. Total travelled miles are: " << travelDistance << " Km" << endl;
+    cout << "Arrived at Destination. Total travelled kilometers are: " << travelDistance << " Km" << endl;
 
 }
 

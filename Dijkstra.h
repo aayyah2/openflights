@@ -9,6 +9,7 @@ using namespace std;
 #include <array>
 #include <string>
 #include <map>
+#pragma once
 
 
 class Dijkstra {
