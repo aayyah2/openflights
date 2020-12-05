@@ -50,7 +50,7 @@ std::vector<std::string> file_to_vector(const std::string & filename) {
 }
 
 //parse through the vector to return needed info (3 digit code, lat, long)
-std::vector<array<string, 3>> parseVector(std::vector<std::string> vectorIn, size_t size) {
+std::vector<array<string, 3>> parseVector(std::vector<std::string> vectorIn, size_t size, array<int, 3> arr) {
 	std::vector<array<string, 3>> parsedVector;
 	std::string temp;
 	for (size_t i = 0; i < size; i++) {
@@ -65,8 +65,8 @@ std::vector<array<string, 3>> parseVector(std::vector<std::string> vectorIn, siz
 			v.push_back(substr);
 		}
 		temp = v[4] + "," + v[6] + "," + v[7];
-
-		array<string, 3> a{v[4],v[6],v[7]};
+		
+		array<string, 3> a{v[arr[0]],v[arr[1]],v[arr[2]]};
 		
 
 		parsedVector.push_back(a);
@@ -77,7 +77,7 @@ std::vector<array<string, 3>> parseVector(std::vector<std::string> vectorIn, siz
 }
 
 //calculation of distance (cost) between 2 geographic points
-long double orthodromicDistance(long double lat1, long double long1, long double lat2, long double long2) {
+long double orthodromicDistance(double lat1, double long1, double lat2, double long2) {
 	
 	// Convert the latitudes and longitudes from degree to radians. 
 	lat1 = toRadians(lat1); 
@@ -118,22 +118,27 @@ bool airportFound(string userInput, std::vector<array<string, 3>> dataset) {
   return false;
 }
 
-long double findDistance(string code1, string code2, std::vector<array<string, 3>> dataset) {
-	long double lat1;
-	long double long1;
-	long double lat2;
-	long double long2;
+double findDistance(string code1, string code2, std::vector<array<string, 3>> dataset) {
+	code1 = '"' + code1 + '"' ;
+	code2 = '"' + code2 + '"' ;
+	
+	double lat1;
+	double long1;
+	double lat2;
+	double long2;
+
 	for (array<string, 3> airport:dataset) {
 		if (airport[0] == code1) {
-			lat1 = stold(airport[1]);
-			cout<<lat1;
-			long1 = stold(airport[2]);
-			cout<<long1 << endl;
+			lat1 = stod(airport[1]);
+			
+			long1 = stod(airport[2]);
+		
 		}
 		if (airport[0] == code2) {
-			lat2 = stold(airport[1]);
-			long2 = stold(airport[2]);
+			lat2 = stod(airport[1]);
+			long2 = stod(airport[2]);
 		}
   }
   return (orthodromicDistance(lat1, long1, lat2, long2));
 }
+

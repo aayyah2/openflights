@@ -9,7 +9,7 @@
  */
 
 #pragma once
-
+#include <iostream>
 #include <vector>
 
 using std::vector;
@@ -48,4 +48,4 @@ class Random
     inline bool LFSR();
 };
 
-
+#include "random.cpp"

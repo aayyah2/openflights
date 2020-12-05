@@ -366,7 +366,9 @@ void Graph::snapshot()
 {
     std::stringstream ss;
     ss << picNum;
+    
     string newName = picName + ss.str();
+    
     savePNG(newName);
     ++picNum;
 }
@@ -418,11 +420,15 @@ void Graph::savePNG(string title) const
         << "\tedge [penwidth=\"1.5\", fontsize=\"7.0\"];\n";
 
     vector<Vertex> allv = getVertices();
+    
     //lambda expression
     sort(allv.begin(), allv.end(), [](const Vertex& lhs, const Vertex& rhs) {
-        return stoi(lhs.substr(3)) > stoi(rhs.substr(3));
+        //cout << stoi(lhs) << endl;
+        //cout << stoi(rhs) << endl;
+        return (lhs) > (rhs);
     });
 
+    
     int xpos1 = 100;
     int xpos2 = 100;
     int xpos, ypos;
@@ -471,8 +477,26 @@ void Graph::savePNG(string title) const
             }
             if (weighted && it2->second.getWeight() != -1)
                 neatoFile << "[label=\"" << it2->second.getWeight() << "\"]";
-            
+
             neatoFile<< "[constraint = \"false\"]" << ";\n";
+
+            
+        }
+    }
+
+    for (auto it = adjacency_list.begin(); it != adjacency_list.end(); ++it) 
+    {
+        for (auto it2 = it->second.begin(); it2 != it->second.end(); ++it2) 
+        {
+            string vertex1Text = it->first;
+            string vertex2Text = it2->first;
+
+            neatoFile << "\t\"" ;
+            neatoFile << vertex1Text;
+            neatoFile << "\" -- \"" ;
+            neatoFile << vertex2Text;
+            neatoFile << "\"";
+            
         }
     }
 

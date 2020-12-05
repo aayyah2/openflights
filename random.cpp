@@ -7,7 +7,7 @@
  * Constructor.
  * @param seed - seed to initialize the RNG
  */
-Random::Random(unsigned long seed)
+inline Random::Random(unsigned long seed)
 {
     shiftRegister = (seed == 0) ? 1 : seed;
 }
@@ -15,7 +15,7 @@ Random::Random(unsigned long seed)
 /**
  * @return a random integer
  */
-int Random::nextInt()
+inline int Random::nextInt()
 {
     int ret = 0;
     for (int pos = 0; pos < 10; ++pos)
@@ -41,7 +41,7 @@ void Random::shuffle(vector<T>& array)
  * This function is taken from Bruce Schneier's \emph{Applied Cryptography}
  * @return a random bit
  */
-bool Random::LFSR()
+inline bool Random::LFSR()
 {
     if (shiftRegister & 0x00000001) {
         shiftRegister = (shiftRegister ^ 0x80000057 >> 1) | 0x80000000;
