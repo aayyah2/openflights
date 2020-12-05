@@ -9,18 +9,19 @@
 #include <cmath>
 #include <list>
 #include <queue>
+#include "graph.h"
 using namespace std;
  
 class BFS {
 
- int V; 
- list <int> *adj; 
 
 public:
- BFS(int V);
- void addEdge(int v, int w);
- void BFSS(int s);
- 
+    BFS(Graph g, Vertex s);
+    Vertex startingPoint;
+    vector<Vertex> q;
+    list<Vertex> *adj;
+
+
   
 //private:
  
