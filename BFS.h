@@ -3,7 +3,6 @@
  */
 
 #pragma once
-
 #include <iterator>
 #include <iostream>
 #include <cmath>
@@ -26,9 +25,8 @@ public:
     BFS(Graph g, Vertex origin);
     Vertex startingPoint;
     vector<Vertex> q;
-    list<Vertex> *adj;
-
-
+    vector<Vertex> adj;
+    map<vector<Vertex>, bool> visited;
   
 //private:
  
