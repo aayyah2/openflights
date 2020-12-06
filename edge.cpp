@@ -1,6 +1,6 @@
 /**
  * @file edge.h
- * Definition and (minimal) implementation of an edge class.
+ * Definition and (minimal) implementation of an edge class, used from lab_ml
  */
 
 #pragma once
