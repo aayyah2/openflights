@@ -5,49 +5,62 @@
 #include <queue>
 #include <stack>
 #include <vector>
-
 #include "BFS.h"
+#include <map>
 using namespace std;
 
-BFS::BFS(int V) 
+BFS::BFS(Graph g, Vertex origin) //g is the graph, s is the source node
 {  
-    this->V = V; 
-    adj = new list<int>[V]; 
+   vector<Vertex> bfsNodes;
+    //visited := a set to store references to all visited nodes
+    vector<Vertex> vertices = g.getVertices();
+    std::map<Vertex, bool> visited;
+
+    for (Vertex v : vertices) {
+        visited[v] = false;
+    }
+
+    //queue := a queue to store references to nodes we should visit later
+    std::deque<Vertex> q;
+    
+    //queue.enqueue(start_node)
+    q.push_back(origin);
+ 
+    //visited.add(start_node)
+    visited[origin] = true;
+
+    Vertex current;
+    //while queue is not empty:
+    while (q.size() > 0) {
+        //process current_node
+        current = q.front();
+        bfsNodes.push_back(current); 
+        
+        vector<Vertex> currentAdjacent = g.getAdjacent(current);
+        
+        //delete current node so that we can process next nodes
+        //cout << q.front() << endl;
+        q.pop_front();
+
+        //for neighbor in current_node.neighbors:
+        for (Vertex neighbor: currentAdjacent) {
+            
+            //if neighbor is not in visited:
+            if(visited[neighbor] == false) {
+                
+                //queue.enqueue(neighbor)
+                q.push_back(neighbor);
+
+                //visited.add(neighbor)
+                visited[neighbor] = true;
+           
+            }
+        }
+    }
+
+    for (Vertex node: bfsNodes) {
+        cout << node << endl;
+    }
+    
+
 }
-
-void BFS::addEdge(int v, int w) 
-{ 
-    adj[v].push_back(w); 
-} 
-  
-void BFS::BFSS(int s) 
-{ 
-    bool *visited = new bool[V]; 
-    for(int i = 0; i < V; i++) 
-        visited[i] = false; 
-  
-    list<int> queue; 
-  
-    visited[s] = true; 
-    queue.push_back(s); 
-  
-
-    list<int>::iterator i; 
-  
-    while(!queue.empty()) 
-    { 
-        s = queue.front(); 
-        cout << s << " "; 
-        queue.pop_front(); 
-  
-       
-        for (i = adj[s].begin(); i != adj[s].end(); ++i) 
-        { 
-            if (!visited[*i]) 
-            { 
-                visited[*i] = true; 
-                queue.push_back(*i); 
-            } 
-        } 
-    } 
-} 

@@ -30,14 +30,14 @@ edge.o : edge.cpp
 graph.o : graph.cpp graph.h edge.o 
 	$(CXX) $(CXXFLAGS) graph.cpp
 
-test: test.o BFS.o 
-	$(LD) test.o BFS.o $(LDFLAGS) -o test
-
-tests.o: tests/test.cpp
-	$(CXX) $(CXXFLAGS) tests/test.cpp
+test: test.o catchmain.o other.o graph.o
+	$(LD) catchmain.o test.o other.o graph.o $(LDFLAGS) -o test
 
 catchmain.o : catch/catchmain.cpp catch/catch.hpp
 	$(CXX) $(CXXFLAGS) catch/catchmain.cpp
+
+test.o: tests/test.cpp catch/catch.hpp
+	$(CXX) $(CXXFLAGS) tests/test.cpp
 
 main.o : main.cpp BFS.h other.h graph.h Dijkstra.h LandmarkPath.h
 	$(CXX) $(CXXFLAGS) main.cpp

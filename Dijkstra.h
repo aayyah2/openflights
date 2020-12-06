@@ -9,6 +9,8 @@ using namespace std;
 #include <array>
 #include <string>
 #include <map>
+#include <queue>
+#include <deque>
 #pragma once
 
 
@@ -17,6 +19,7 @@ class Dijkstra {
         //constructor for shortest path finder
         Dijkstra(Graph g, Vertex origin, Vertex destination);
         void printItinerary();
+        void BFSAttempt(Graph g, Vertex origin);
 
         Vertex startingPoint;
         Vertex endingPoint;
