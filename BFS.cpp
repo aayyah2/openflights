@@ -5,29 +5,30 @@
 #include <queue>
 #include <stack>
 #include <vector>
-
 #include "BFS.h"
+#include <map>
 using namespace std;
 
 BFS::BFS(Graph g, Vertex s) //g is the graph, s is the source node
 {  
     
     startingPoint = s;
-    q = g.getVertices();
+    q = g.getVertices(); // returns a vector 
 
-    bool *visited = new bool[q.size()];
-    for(int i = 0; i < q.size(); i++)
+    visited[s] = false;                    
+    for (Vertex v: q) 
     {
-        visited[i] = false;
-    }
-
+        if (v != s) 
+        {
+            visited[v]=false;
+        } 
+    }   
     queue<Vertex> Q; //let Q be queue
-    list<Vertex>::iterator w;
+    //list<Vertex>::iterator w;
     Vertex v;
-    adj = new list<Vertex>[q.size()];
+    vector<Vertex> adj[q.size()];
 
     Q.push(s); //enqueue s, inserting s in queue until all its neighbor vertices are marked
-    
     visited[s] = true; //mark s as visited
 
     while(!Q.empty()) //while Q is not empty
@@ -37,12 +38,13 @@ BFS::BFS(Graph g, Vertex s) //g is the graph, s is the source node
         Q.pop();
 
         // processing all neighbors of v
-        for(w = adj[v].begin; w!=adj[v].end(); ++w) // for all neighbors w of v in graph G
+        for(Vertex child : adj[v]) // for all neighbors w of v in graph G
         {
-            if(!visited[*w]) //if w is not visited
+            if(!visited[child]) //if w is not visited
             {
-                Q.push(*w); //enqueue w, stores w in Q to further visit its neighbor
-                visited[*w] = true; //mark w as visited
+                //Q.push(*w); //enqueue w, stores w in Q to further visit its neighbor
+                Q.push(child);
+                visited[child] = true; //mark w as visited
             }
         }
     }
