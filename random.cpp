@@ -1,6 +1,6 @@
 /**
  * @file random.cpp
- * Random library implementation.
+ * Random library implementation taken from an mp/lab.
  */
 #include "random.h"
 /**

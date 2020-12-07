@@ -1,3 +1,4 @@
+//code used from lab_ml
 #include "graph.h"
 
 const Vertex Graph::InvalidVertex = "_CS225INVALIDVERTEX";

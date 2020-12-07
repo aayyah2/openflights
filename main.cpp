@@ -50,8 +50,6 @@ int main() {
 
 
   //code for importing airportData (file_to_string is in other.cpp)
-  /**
-  
   const std::string & airportData = "Datasets/airportData.csv";
   std::vector<std::string> data = file_to_vector(airportData);
   
@@ -97,9 +95,8 @@ int main() {
    
   }
 
-  LandmarkPath shortestLayoverPath(g, "CMI", "SBU", "KEF");
-  shortestLayoverPath.printLayoverItinerary();
-**/
+  LandmarkPath shortestLayoverPath(g, "CMI", "SBU", "KEF"); //finding the shortest layover path
+  shortestLayoverPath.printLayoverItinerary(); //printing the itinerary using the dataset with layovers
 
   // Dijkstra shortestPath(g, "ORD", "BOM");
 
