@@ -27,6 +27,7 @@ public:
     vector<Vertex> q;
     vector<Vertex> adj;
     map<vector<Vertex>, bool> visited;
+    vector<Vertex> bfsNodes;
   
 //private:
  

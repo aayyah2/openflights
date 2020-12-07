@@ -46,7 +46,6 @@ int main() {
   test.insertEdge(one, six);
   test.insertEdge(four, six);
   
-
   BFS myBFS(test, zero);
 
 

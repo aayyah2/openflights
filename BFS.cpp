@@ -11,7 +11,7 @@ using namespace std;
 
 BFS::BFS(Graph g, Vertex origin) //g is the graph, s is the source node
 {  
-   vector<Vertex> bfsNodes;
+   //vector<Vertex> bfsNodes;
     //visited := a set to store references to all visited nodes
     vector<Vertex> vertices = g.getVertices();
     std::map<Vertex, bool> visited;
