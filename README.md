@@ -16,13 +16,16 @@ The inclusion of a landmark/layover in the itinerary is dictated by the user's i
 The complete path is printed out when the calculations are complete. This is formatted with the starting and ending airport printed, along with a step-by-step travel plan and total Km travelled. 
 
 Ex:
+
 *User Input*
+
 Enter Departure Airport Code: CMI
 Enter Arrival Airport Code: FRA
 If you want to integrate a layover into your itinerary, enter 1; else enter 0: 1
 Please enter the code of your layover: DXB
 
 *Terminal Output*
+
 Starting airport is: CMI
 Layover airport is: DXB
 Ending airport is: FRA
