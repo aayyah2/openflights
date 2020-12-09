@@ -15,7 +15,7 @@ The inclusion of a landmark/layover in the itinerary is dictated by the user's i
 
 The complete path is printed out when the calculations are complete. This is formatted with the starting and ending airport printed, along with a step-by-step travel plan and total Km travelled. 
 
-Ex:
+**Ex:**
 
 *User Input*
 
