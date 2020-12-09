@@ -1,6 +1,7 @@
 # aditiaa2-aayyah2-jchint2-cgurna2
 Final Project
 
+
 **Description:**
 Our final project for CS 225 utilizes an airports dataset (https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat) to calculate the most efficient path based on different user preferences. 
 
@@ -15,7 +16,8 @@ The inclusion of a landmark/layover in the itinerary is dictated by the user's i
 
 The complete path is printed out when the calculations are complete. This is formatted with the starting and ending airport printed, along with a step-by-step travel plan and total Km travelled. 
 
-**Ex:**
+
+**Example:**
 
 *User Input*
 
@@ -38,6 +40,7 @@ Travel to NUE
 Travel to FRA
 Arrived at Destination. Total travelled kilometers are: 16698 Km
 
+
 **To Build:**
 This project is written in C++.
 In order to "make", open the main directory on your terminal and run:
@@ -50,8 +53,10 @@ If you're curious about our testing process and want to see our test cases in ac
 1) make test
 2) ./test
 
+
 **Usage:**
 We think this is a cool representation of what can be done with graph data structures and traversals. Though this is historical data (and therefore not up to date), it's useful to illustrate the complexities of air travel and how algorithms like Dijkstra can be used to quickly and efficiently calculate paths. 
+
 
 **Authors:**
 Aditi Adya (aditiaa2)
