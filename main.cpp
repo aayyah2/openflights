@@ -18,37 +18,7 @@ using namespace std;
 #include <map>
 
 int main() {
-  Graph test(false, false);
-  Vertex zero = "0";
-  Vertex one = "1";
-  Vertex two = "2";
-  Vertex three = "3";
-  Vertex four = "4";
-  Vertex five = "5";
-  Vertex six = "6";
-
-  test.insertVertex(zero);
-  test.insertVertex(one);
-  test.insertVertex(two);
-  test.insertVertex(three);
-  test.insertVertex(four);
-  test.insertVertex(five);
-
-  test.insertEdge(zero, one);
-  test.insertEdge(zero, three);
-  test.insertEdge(three, one);
-  test.insertEdge(one, two);
-  test.insertEdge(two, three);
-  test.insertEdge(two, four);
-  test.insertEdge(two, five);
-  test.insertEdge(one, five);
-  test.insertEdge(three, four);
-  test.insertEdge(one, six);
-  test.insertEdge(four, six);
   
-  BFS myBFS(test, zero);
-
-
   //code for importing airportData (file_to_string is in other.cpp)
   const std::string & airportData = "Datasets/airportData.csv";
   std::vector<std::string> data = file_to_vector(airportData);
