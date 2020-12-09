@@ -16,6 +16,16 @@ using namespace std;
 #include <array>
 #include <string>
 #include <map>
+/**
+* This is our final project for CS 225. We utilized the OpenFlights Dataset (https://openflights.org/data.html), and specifically used the routes and airport datasets for our project. 
+* Our main goal was to find a way to calculate the shortest path from a given Airport to any other Airport. 
+*
+* In order to do this, we implemented Dijkstra's Algorithm (https://brilliant.org/wiki/dijkstras-short-path-finder/) in Dijkstra.h and Dijkstra.cpp. 
+* We also implemented a Landmark Path Algorithm using Dijkstra's Algorithm in LandmarkPath.h and LandmarkPath.cpp. 
+* We have written a BFS traversal of our weighted and directed graph (g) to visit all the nodes in BFS order. 
+* 
+* We take in user input via std::cin >> and output a printed itinerary which details the exact path to take to the desination, along with total travelled miles.
+**/
 
 int main() {
   
