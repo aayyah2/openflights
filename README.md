@@ -1,5 +1,5 @@
 # aditiaa2-aayyah2-jchint2-cgurna2
-Final Project
+Final Project: OpenFlights Shortest Path and Landmark Path
 
 
 **Description:**
