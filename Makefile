@@ -30,8 +30,8 @@ edge.o : edge.cpp
 graph.o : graph.cpp graph.h edge.o 
 	$(CXX) $(CXXFLAGS) graph.cpp
 
-test: test.o catchmain.o other.o graph.o
-	$(LD) catchmain.o test.o other.o graph.o $(LDFLAGS) -o test
+test: test.o catchmain.o other.o graph.o Dijkstra.o LandmarkPath.o BFS.o
+	$(LD) catchmain.o test.o other.o graph.o Dijkstra.o LandmarkPath.o BFS.o $(LDFLAGS) -o test
 
 catchmain.o : catch/catchmain.cpp catch/catch.hpp
 	$(CXX) $(CXXFLAGS) catch/catchmain.cpp

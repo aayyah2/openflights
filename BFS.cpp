@@ -11,9 +11,8 @@ using namespace std;
 
 BFS::BFS(Graph g, Vertex origin) //g is the graph, origin is the source node (starting airport)
 {  
-    vector<Vertex> bfsNodes; //vector of vertices named bfsNodes
-   
-    //get vertices from our particular dataset
+   //vector<Vertex> bfsNodes;
+    //visited := a set to store references to all visited nodes
     vector<Vertex> vertices = g.getVertices();
    
     //visited := a set to store references to all visited nodes
