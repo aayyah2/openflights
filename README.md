@@ -30,24 +30,15 @@ The complete path is printed out when the calculations are complete. This is for
 *Terminal Output*
 
 - Starting airport is: CMI
-
 - Layover airport is: DXB
-
 - Ending airport is: FRA
-
 - *This is how you get from CMI to FRA via DXB:*
   * Travel to ORD
-
   * Travel to ARN
-  
   * Travel to DXB
-  
   * Travel to VIE
-  
   * Travel to NUE
-  
   * Travel to FRA
-  
 - Arrived at Destination. Total travelled kilometers are: 16698 Km
 
 
