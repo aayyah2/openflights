@@ -69,6 +69,13 @@ If you're curious about our testing process and want to see our test cases in ac
 2) ./test
 
 
+**Directory Guide:**
+1) The Datasets folder contains the airports and routes CSVs
+2) The images folder contains the graphical output (PNG) of our complete dataset. This is the graph we traversed for our algorithms
+3) The tests folder contains our test.cpp (test cases)
+4) The catch folder contains code from the CS 225 test suite (used to help us write test cases)
+
+
 **Usage:**
 We think this is a cool representation of what can be done with graph data structures and traversals. Though this is historical data (and therefore not up to date), it's useful to illustrate the complexities of air travel and how algorithms like Dijkstra can be used to quickly and efficiently calculate paths. 
 
@@ -78,5 +85,12 @@ Aditi Adya (aditiaa2)
 Aparna Ayyah (aayyah2)
 Chaahat Gurnani (cgurna2)
 Joshmita Chintala (jchint2)
+
+**Credits:**
+Thank you to CS 225 for the Graph.h, Graph.cpp, Edge.cpp, Random.h, Random.cpp, catch.hpp, and catchmain.cpp files. 
+- Our BFS.h and BFS.cpp code is based on the Pseudocode provided here (https://courses.engr.illinois.edu/cs225/fa2020/resources/bfs-dfs/)
+- Our Dijkstra's Algorithm (Dijkstra.h and Dijkstra.cpp) is based on the explanations provided on this page (https://brilliant.org/wiki/dijkstras-short-path-finder/)
+
+Special thanks to all the TAs and CAs that helped us troubleshoot our problems! We really enjoyed this experience. 
 
 **We hope you enjoy our project!**
