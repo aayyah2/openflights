@@ -22,11 +22,8 @@ The complete path is printed out when the calculations are complete. This is for
 *User Input*
 
 - Enter Departure Airport Code: CMI
-
 - Enter Arrival Airport Code: FRA
-
 - If you want to integrate a layover into your itinerary, enter 1; else enter 0: 1
-
 - Please enter the code of your layover: DXB
 
 
