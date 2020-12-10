@@ -21,38 +21,37 @@ The complete path is printed out when the calculations are complete. This is for
 
 *User Input*
 
-Enter Departure Airport Code: CMI
+- Enter Departure Airport Code: CMI
 
-Enter Arrival Airport Code: FRA
+- Enter Arrival Airport Code: FRA
 
-If you want to integrate a layover into your itinerary, enter 1; else enter 0: 1
+- If you want to integrate a layover into your itinerary, enter 1; else enter 0: 1
 
-Please enter the code of your layover: DXB
+- Please enter the code of your layover: DXB
 
 
 *Terminal Output*
 
-Starting airport is: CMI
+- Starting airport is: CMI
 
-Layover airport is: DXB
+- Layover airport is: DXB
 
-Ending airport is: FRA
+- Ending airport is: FRA
 
-This is how you get from CMI to FRA via DXB:
+- *This is how you get from CMI to FRA via DXB:*
+- Travel to ORD
 
-Travel to ORD
+- Travel to ARN
 
-Travel to ARN
+- Travel to DXB
 
-Travel to DXB
+- Travel to VIE
 
-Travel to VIE
+- Travel to NUE
 
-Travel to NUE
+- Travel to FRA
 
-Travel to FRA
-
-Arrived at Destination. Total travelled kilometers are: 16698 Km
+- Arrived at Destination. Total travelled kilometers are: 16698 Km
 
 
 **To Build:**
