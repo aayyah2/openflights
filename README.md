@@ -42,16 +42,16 @@ The complete path is printed out when the calculations are complete. This is for
   * Travel to ORD
 
   * Travel to ARN
-
-... Travel to DXB
-
-... Travel to VIE
-
-... Travel to NUE
-
-... Travel to FRA
-
-... Arrived at Destination. Total travelled kilometers are: 16698 Km
+  
+  * Travel to DXB
+  
+  * Travel to VIE
+  
+  * Travel to NUE
+  
+  * Travel to FRA
+  
+  * Arrived at Destination. Total travelled kilometers are: 16698 Km
 
 
 **To Build:**
