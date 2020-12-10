@@ -62,6 +62,7 @@ If you're curious about our testing process and want to see our test cases in ac
 2) The images folder contains the graphical output (PNG) of our complete dataset. This is the graph we traversed for our algorithms
 3) The tests folder contains our test.cpp (test cases)
 4) The catch folder contains code from the CS 225 test suite (used to help us write test cases)
+5) The PDFs folder contains our contracts and other documents (including the final project report)
 
 
 **Usage:**
@@ -75,7 +76,7 @@ Chaahat Gurnani (cgurna2)
 Joshmita Chintala (jchint2)
 
 **Credits:**
-Thank you to CS 225 for the Graph.h, Graph.cpp, Edge.cpp, Random.h, Random.cpp, catch.hpp, and catchmain.cpp files. 
+- Thank you to CS 225 for the Graph.h, Graph.cpp, Edge.cpp, Random.h, Random.cpp, catch.hpp, and catchmain.cpp files. 
 - Our BFS.h and BFS.cpp code is based on the Pseudocode provided here (https://courses.engr.illinois.edu/cs225/fa2020/resources/bfs-dfs/)
 - Our Dijkstra's Algorithm (Dijkstra.h and Dijkstra.cpp) is based on the explanations provided on this page (https://brilliant.org/wiki/dijkstras-short-path-finder/)
 
