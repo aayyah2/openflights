@@ -18,38 +18,7 @@ using namespace std;
 #include <map>
 
 int main() {
-  Graph test(false, false);
-  Vertex zero = "0";
-  Vertex one = "1";
-  Vertex two = "2";
-  Vertex three = "3";
-  Vertex four = "4";
-  Vertex five = "5";
-  Vertex six = "6";
-
-  test.insertVertex(zero);
-  test.insertVertex(one);
-  test.insertVertex(two);
-  test.insertVertex(three);
-  test.insertVertex(four);
-  test.insertVertex(five);
-
-  test.insertEdge(zero, one);
-  test.insertEdge(zero, three);
-  test.insertEdge(three, one);
-  test.insertEdge(one, two);
-  test.insertEdge(two, three);
-  test.insertEdge(two, four);
-  test.insertEdge(two, five);
-  test.insertEdge(one, five);
-  test.insertEdge(three, four);
-  test.insertEdge(one, six);
-  test.insertEdge(four, six);
   
-
-  BFS myBFS(test, zero);
-
-
   //code for importing airportData (file_to_string is in other.cpp)
   const std::string & airportData = "Datasets/airportData.csv";
   std::vector<std::string> data = file_to_vector(airportData);
@@ -92,13 +61,39 @@ int main() {
     g.setEdgeWeight(v1, v2, findDistance(v1, v2, refinedData)); //setting the edge weight using the calculation of the Orthodromic distance between the two airports 
     
     i++;
-    break;
    
   }
 
-  LandmarkPath shortestLayoverPath(g, "CMI", "SBU", "KEF"); //finding the shortest layover path
-  shortestLayoverPath.printLayoverItinerary(); //printing the itinerary using the dataset with layovers
+  string departure = "";
+  cout<< "Enter Departure Airport Code: ";
+  cin>> departure;
+  
+  
+  string arrival = "";
+  cout<< "Enter Arrival Airport Code: ";
+  cin>> arrival;
 
+  
+  string landmark = "";
+  cout<< "If you want to integrate a layover into your itinerary, enter 1; else enter 0: ";
+  cin>> landmark;
+
+  string layover = "";
+  
+  if (landmark == "1") {
+    cout<< "Please enter the code of your layover: ";
+    cin>> layover;
+    LandmarkPath shortestLayoverPath(g, departure, arrival, layover); //finding the shortest layover path
+    shortestLayoverPath.printLayoverItinerary(); //printing the itinerary using the dataset with layovers
+
+  } else if (landmark == "0") {
+    Dijkstra shortestPath(g, departure, arrival);
+    shortestPath.printItinerary();
+  }
+  g.initSnapshot("Out");
+  g.snapshot();
+
+  
   // Dijkstra shortestPath(g, "ORD", "BOM");
 
   // shortestPath.printItinerary();
@@ -113,11 +108,10 @@ int main() {
 
   
   /**
-   for (int i = 0; i < 10; i++) {
-   //array<string, 3> temp{refinedData[i]};
-   cout<<refinedData[i][0]<<endl;
-   }
-   
+     if (airportFound(departure, refinedData)&& airportFound(arrival,refinedData)) {
+
+  }
+
    string departure = "";
    cout<< "Enter Departure Airport Code: ";
    cin>> departure;
