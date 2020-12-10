@@ -38,20 +38,20 @@ The complete path is printed out when the calculations are complete. This is for
 
 - Ending airport is: FRA
 
-*This is how you get from CMI to FRA via DXB:*
-- Travel to ORD
+- *This is how you get from CMI to FRA via DXB:*
+... Travel to ORD
 
-- Travel to ARN
+... Travel to ARN
 
-- Travel to DXB
+... Travel to DXB
 
-- Travel to VIE
+... Travel to VIE
 
-- Travel to NUE
+... Travel to NUE
 
-- Travel to FRA
+... Travel to FRA
 
-- Arrived at Destination. Total travelled kilometers are: 16698 Km
+... Arrived at Destination. Total travelled kilometers are: 16698 Km
 
 
 **To Build:**
