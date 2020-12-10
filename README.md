@@ -22,34 +22,50 @@ The complete path is printed out when the calculations are complete. This is for
 *User Input*
 
 Enter Departure Airport Code: CMI
+
 Enter Arrival Airport Code: FRA
+
 If you want to integrate a layover into your itinerary, enter 1; else enter 0: 1
+
 Please enter the code of your layover: DXB
+
 
 *Terminal Output*
 
 Starting airport is: CMI
+
 Layover airport is: DXB
+
 Ending airport is: FRA
+
 This is how you get from CMI to FRA via DXB:
+
 Travel to ORD
+
 Travel to ARN
+
 Travel to DXB
+
 Travel to VIE
+
 Travel to NUE
+
 Travel to FRA
+
 Arrived at Destination. Total travelled kilometers are: 16698 Km
 
 
 **To Build:**
 This project is written in C++.
 In order to "make", open the main directory on your terminal and run:
+
 1) make
 2) ./final
 
 You will then be prompted to enter your inputs and landmarks. 
 
 If you're curious about our testing process and want to see our test cases in action, run:
+
 1) make test
 2) ./test
 
