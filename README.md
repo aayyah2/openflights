@@ -39,9 +39,9 @@ The complete path is printed out when the calculations are complete. This is for
 - Ending airport is: FRA
 
 - *This is how you get from CMI to FRA via DXB:*
-⋅⋅* Travel to ORD
+  * Travel to ORD
 
-... Travel to ARN
+  * Travel to ARN
 
 ... Travel to DXB
 
