@@ -51,7 +51,7 @@ The complete path is printed out when the calculations are complete. This is for
   
   * Travel to FRA
   
-  * Arrived at Destination. Total travelled kilometers are: 16698 Km
+- Arrived at Destination. Total travelled kilometers are: 16698 Km
 
 
 **To Build:**
