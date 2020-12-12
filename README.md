@@ -48,7 +48,7 @@ The complete path is printed out when the calculations are complete. This is for
 
 **To Build:**
 This project is written in C++.
-In order to "make", open the main directory on your terminal and run:
+In order to "make", clone this repo, and open the main directory on your terminal and run:
 
 1) make
 2) ./final
