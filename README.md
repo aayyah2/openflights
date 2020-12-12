@@ -5,6 +5,15 @@ Final Project: OpenFlights Shortest Path and Landmark Path
 **Video Presentation:** https://youtu.be/fZuTQDcP0mU
 
 
+**Directory Guide:**
+1) The Datasets folder contains the airports and routes CSVs
+2) The images folder contains the graphical output (PNG) of our complete dataset. This is the graph we traversed for our algorithms
+3) The tests folder contains our test.cpp (test cases)
+4) The catch folder contains code from the CS 225 test suite (used to help us write test cases)
+5) The PDFs folder contains **our contracts (NETID.pdf), final project report (Results.pdf), Development Log (Development.md), and Goals Document (GOALS.pdf)**
+6) Our project code is in the main directory
+
+
 **Description:**
 Our final project for CS 225 utilizes an airports dataset (https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat) to calculate the most efficient path based on different user preferences. 
 
@@ -59,16 +68,6 @@ If you're curious about our testing process and want to see our test cases in ac
 
 1) make test
 2) ./test
-
-
-
-**Directory Guide:**
-1) The Datasets folder contains the airports and routes CSVs
-2) The images folder contains the graphical output (PNG) of our complete dataset. This is the graph we traversed for our algorithms
-3) The tests folder contains our test.cpp (test cases)
-4) The catch folder contains code from the CS 225 test suite (used to help us write test cases)
-5) The PDFs folder contains **our contracts (NETID.pdf), final project report (Results.pdf), Development Log (Development.md), and Goals Document (GOALS.pdf)**
-6) Our project code is in the main directory
 
 
 
