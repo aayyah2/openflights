@@ -10,7 +10,7 @@ Final Project: OpenFlights Shortest Path and Landmark Path
 2) The images folder contains the graphical output (PNG) of our complete dataset. This is the graph we traversed for our algorithms
 3) The tests folder contains our test.cpp (test cases)
 4) The catch folder contains code from the CS 225 test suite (used to help us write test cases)
-5) The PDFs folder contains **our contracts (NETID.pdf), final project report (Results.pdf), Development Log (Development.md), and Goals Document (GOALS.pdf)**
+5) The Project Documents folder contains **our contracts (NETID.pdf), final project report (Results.pdf), Development Log (Development.md), and Goals Document (GOALS.pdf)**
 6) Our project code is in the main directory
 
 
